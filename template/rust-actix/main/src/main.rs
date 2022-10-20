@@ -1,4 +1,4 @@
-use actix_web::{post, web,Error, App, HttpServer, Responder};
+use actix_web::{post, web, App, Error, HttpServer, Responder};
 use std::str;
 
 use handler;
@@ -11,10 +11,8 @@ async fn handler_service(body: web::Bytes) -> Result<impl Responder, Error> {
 
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
-    HttpServer::new(|| {
-        App::new().service(handler_service)
-    })
-    .bind(("0.0.0.0", 3000))?
-    .run()
-    .await
+    HttpServer::new(|| App::new().service(handler_service))
+        .bind(("0.0.0.0", 3000))?
+        .run()
+        .await
 }

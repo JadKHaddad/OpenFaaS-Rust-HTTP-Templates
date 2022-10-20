@@ -3,6 +3,7 @@ FROM openfaas/of-watchdog:0.7.2 as watchdog
 FROM rust:1.59-alpine3.14 as builder
 
 RUN USER=root
+RUN apk add --no-cache musl-dev
 
 # Copy all the sources
 COPY function /home/rust/function
@@ -34,5 +35,3 @@ ENV upstream_url="http://127.0.0.1:3000"
 HEALTHCHECK --interval=3s CMD [ -e /tmp/.lock ] || exit 1
 
 CMD ["fwatchdog"]
-
-# TODO: CEHCK

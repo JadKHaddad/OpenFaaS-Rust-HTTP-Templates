@@ -1,2 +1,2 @@
-language: rust
+language: rust-http
 fprocess: main

@@ -9,5 +9,4 @@ faas-cli new mycfunction-r-http --lang rust-http
 faas-cli new mycfunction-r-ac   --lang rust-actix
 ```
 ## Notes
-Mdified versions of **rust** and **rust-http** templates.
-[Original templates](https://github.com/openfaas-incubator/rust-http-template)
+[Original rust and rust-http templates](https://github.com/openfaas-incubator/rust-http-template)
